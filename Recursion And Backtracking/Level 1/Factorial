@@ -20,7 +20,7 @@ Link To Question :- https://www.pepcoding.com/resources/online-java-foundation/i
         }
         
         
-2. Normal iteration O(n)
+2. Iteration O(n)
         import java.io.*;
         import java.util.*;
         public class Main {
