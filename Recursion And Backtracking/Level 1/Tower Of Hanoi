@@ -1,0 +1,26 @@
+
+Link :-https://www.pepcoding.com/resources/online-java-foundation/introduction-to-recursion/toh-official/ojquestion
+
+1. Recursion O( 2^n + 1 )
+            import java.io.*;
+            import java.util.*;
+            public class Main {
+                public static void main(String[] args) throws Exception {
+                    Scanner sc = new Scanner( System.in );
+                    int n = sc.nextInt();
+                    int tower1 = sc.nextInt();
+                    int tower2 = sc.nextInt();
+                    int tower3 = sc.nextInt();
+                    towerOfHanio( n , tower1 , tower2 , tower3 );
+                }
+                public static void towerOfHanio(int n, int t1id, int t2id, int t3id){
+                    if( n == 0)
+                        return;
+                    towerOfHanio( n-1 , t1id , t3id , t2id );
+                    System.out.println( n + "[" + t1id + " -> " + t2id + "]");
+                    towerOfHanio ( n-1 , t3id , t2id , t1id );
+                }
+            }
+
+
+
