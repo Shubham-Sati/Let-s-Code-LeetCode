@@ -1,4 +1,5 @@
 Link :- https://www.pepcoding.com/resources/online-java-foundation/introduction-to-recursion/power-linear-official/ojquestion
+Link :- https://www.pepcoding.com/resources/online-java-foundation/introduction-to-recursion/power-logarithmic-official/ojquestion
 
 1. Recursion O(n)
           import java.io.*;
@@ -34,6 +35,29 @@ Link :- https://www.pepcoding.com/resources/online-java-foundation/introduction-
                       ans*=x;
                   }
                   return ans;
+              }
+          }
+          
+3. Optimized O( log(n) )
+          import java.io.*;
+          import java.util.*;
+          public class Main {
+              public static void main(String[] args) throws Exception {
+                  Scanner sc = new Scanner(System.in);
+                  int x = sc.nextInt();
+                  int n = sc.nextInt();
+                  System.out.println( power( x , n ) );
+              }
+              public static int power(int x, int n){
+                  if( n == 0 ){
+                      return 1;
+                  }
+                  int halfPower = power( x , n / 2 );
+                  int fullPower = halfPower * halfPower;
+                  if( n % 2 != 0 ){
+                      fullPower*=x;
+                  }
+                  return fullPower;
               }
           }
 
