@@ -1,0 +1,43 @@
+Link :- https://www.pepcoding.com/resources/online-java-foundation/recursion-with-arraylists/get-kpc-official/ojquestion
+
+1. Recursion O(4n), where n is a number of digits in the input number.Each digit of a number has 3 or 4 alphabets, so it can be said that each digit has 4 alphabets as options.
+        
+        import java.io.*;
+        import java.util.*;
+        public class Main {
+            public static void main(String[] args) throws Exception {
+                Scanner sc = new Scanner(System.in);
+                String num = sc.next();
+                ArrayList<String> ans = getKPC( num );
+                System.out.println( ans );
+            }
+            public static String[] keys = { ".;" , "abc" , "def" , "ghi" ,"jkl" , "mno" , "pqrs" , "tu" , "vwx" , "yz" };
+            public static ArrayList<String> getKPC(String str) {
+                if( str.length() == 0 ){
+                    ArrayList<String>ans = new ArrayList<>();
+                    ans.add("");
+                    return ans;
+                }
+                char ch = str.charAt(0);
+                ArrayList<String>ans = getKPC( str.substring(1) );
+                ArrayList<String> res = new ArrayList<>();
+                String codeAtch = keys[ch - '0'];
+                for( int i = 0 ; i < codeAtch.length() ; i++ ){
+                    char letter = codeAtch.charAt(i);
+                    for( String s : ans ){
+                        res.add( letter + s );
+                    }
+                }
+                return res;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
