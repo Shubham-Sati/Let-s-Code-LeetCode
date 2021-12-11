@@ -1,6 +1,6 @@
 Link :- https://www.pepcoding.com/resources/online-java-foundation/recursion-with-arraylists/get-kpc-official/ojquestion
 
-1. Recursion O(4n), where n is a number of digits in the input number.Each digit of a number has 3 or 4 alphabets, so it can be said that each digit has 4 alphabets as options.
+1. Recursion O(4^n), where n is a number of digits in the input number.Each digit of a number has 3 or 4 alphabets, so it can be said that each digit has 4 alphabets as options.
         
         import java.io.*;
         import java.util.*;
