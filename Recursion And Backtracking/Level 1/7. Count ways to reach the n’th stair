@@ -5,12 +5,12 @@ Link :- https://practice.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-
         {
             int countWays(int n)
             {
-                return fib(n + 1 );
+                return solution(n + 1 );
             }
-            static int fib(int n)
+            static int solution(int n)
             {
                 if (n <= 1)
                     return n;
-                return fib(n - 1  ) + fib(n - 2 );
+                return solution(n - 1  ) + solution(n - 2 );
             }
         }
