@@ -1,0 +1,36 @@
+Link :- https://www.pepcoding.com/resources/online-java-foundation/recursion-with-arraylists/get-maze-paths-official/ojquestion
+
+1. Recursion 
+          import java.io.*;
+          import java.util.*;
+          public class Main {
+              public static void main(String[] args) throws Exception {
+                  Scanner sc = new Scanner(System.in);
+                  int n = sc.nextInt();
+                  int m = sc.nextInt();
+                  System.out.println( getMazePaths( 0 , 0 , n - 1 , m -1 ));
+              }
+              public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
+                  if( sr == dr && sc == dc ){
+                      ArrayList<String> res = new ArrayList<>();
+                      res.add("");
+                      return res;
+                  }
+                  ArrayList<String> hpath = new ArrayList<>();
+                  ArrayList<String> vpath = new ArrayList<>();
+                  if( sr < dr )   
+                      vpath = getMazePaths( sr + 1 , sc , dr , dc );
+                  if( sc < dc )   
+                      hpath = getMazePaths( sr , sc + 1 , dr , dc );
+
+                  ArrayList<String> res = new ArrayList<>();
+                  for( String str : hpath ){
+                      res.add( 'h' + str );
+                  }
+                  for( String str : vpath ){
+                      res.add( 'v' + str );
+                  }
+                  return res;
+              }
+          }
+
