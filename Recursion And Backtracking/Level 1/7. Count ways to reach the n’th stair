@@ -1,0 +1,16 @@
+Link :- https://practice.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-stair-1587115620/1#
+
+1. Recursion O( 2^n )
+        class Solution
+        {
+            int countWays(int n)
+            {
+                return fib(n + 1 );
+            }
+            static int fib(int n)
+            {
+                if (n <= 1)
+                    return n;
+                return fib(n - 1  ) + fib(n - 2 );
+            }
+        }
